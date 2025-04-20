@@ -150,6 +150,10 @@ body {
   color: var(--dark-text);
 }
 
+.light-text-override {
+  color: var(--light-color) !important
+}
+
 .section-title:after {
   content: "";
   position: absolute;
