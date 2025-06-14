@@ -201,19 +201,24 @@ body {
   color: var(--light-color) !important;
 }
 
-/* --- MODIFIED TO MAKE SECTION TITLE UNDERLINE LARGER --- */
+/* Default style for section title underlines */
 .section-title:after {
   content: '';
   position: absolute;
   display: block;
-  width: 500px; /* Increased from 50px */
-  height: 4px; /* Increased from 3px */
+  width: 500px;
+  height: 4px;
   background: var(--primary-color);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
 }
-/* --- END OF MODIFICATION --- */
+
+/* --- NEW: Custom size for the Projects section underline --- */
+#portfolio .section-title:after {
+  width: 250px; /* Custom smaller width */
+}
+/* --- END OF NEW RULE --- */
 
 .service-card {
   padding: 30px;
@@ -424,4 +429,10 @@ footer .social-links a:hover {
   .section-title h2 {
     font-size: 2rem;
   }
+}
+
+/* Custom alignment for the About Us section underline */
+.about-section .section-title.text-start:after {
+  left: 0;
+  transform: none;
 }
