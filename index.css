@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--dark-text);
   background-color: var(--light-color);
 }
@@ -22,9 +22,9 @@ body {
 }
 
 .navbar-brand {
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: white !important;
   letter-spacing: 0.5px;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .nav-link:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 2px;
@@ -77,23 +77,27 @@ body {
   object-fit: cover;
 }
 
-/* Arc divider at the bottom of the hero section */
-.arc-divider {
+/* Update hero section and add fade-out effect */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-font {
+  font-size: 2rem;
+}
+
+.hero-section::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
-  line-height: 0;
+  /* Increased from 150px to make the fade taller and more gradual */
+  height: 280px;
   z-index: 5;
-  pointer-events: none;
-}
-
-.arc-divider svg {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--light-color));
 }
 
 .hero-content {
@@ -151,11 +155,11 @@ body {
 }
 
 .light-text-override {
-  color: var(--light-color) !important
+  color: var(--light-color) !important;
 }
 
 .section-title:after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 50px;
@@ -319,9 +323,60 @@ footer {
   text-align: left !important;
 }
 
+@font-face {
+  font-family: 'Joshyfont';
+  src: url('fonts/Designer.otf') format('opentype');
+}
+* {
+  font-family: 'Joshyfont';
+}
+
 @media (max-width: 991px) {
   .about-content {
     padding-left: 0;
     margin-top: 40px;
+  }
+}
+
+/* --- Definitive Responsive Styles for Mobile & Tablet --- */
+@media (max-width: 768px) {
+  /* 1. HERO SECTION STYLES */
+  .hero-section {
+    height: 75vh;
+    min-height: 550px;
+  }
+
+  /* 2. HERO CONTENT POSITIONING (CRITICAL FIX) */
+  .hero-content {
+    /* These properties ensure the text overlays the image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* These properties style the centered text block */
+    width: 90%;
+    text-align: center;
+  }
+
+  /* 3. HERO FONT SIZES */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  /* 4. GENERAL SECTION PADDING & TITLES */
+  .services-section,
+  .portfolio-section,
+  .contact-section,
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
   }
 }
