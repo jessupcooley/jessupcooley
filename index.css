@@ -86,6 +86,7 @@ body {
   padding: 8px 0;
 }
 
+/* --- MODIFIED FOR 75% CENTERED UNDERLINE --- */
 .nav-link:after {
   content: '';
   position: absolute;
@@ -93,19 +94,21 @@ body {
   height: 2px;
   background: var(--primary-color);
   bottom: 0;
-  left: 0;
-  transition: width 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover:after,
 .nav-link.active:after {
-  width: 100%;
+  width: 75%;
 }
+/* --- END OF MODIFICATION --- */
 
-/* Hero section with image carousel */
+/* --- MODIFIED TO SHORTEN HERO SECTION --- */
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: 65vh; /* Shortened from 80vh */
   overflow: hidden;
 }
 
@@ -121,13 +124,6 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-/* Update hero section and add fade-out effect */
-.hero-section {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
 }
 
 .hero-font {
@@ -167,6 +163,7 @@ body {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
+/* --- END OF MODIFICATION --- */
 
 .btn-primary {
   background-color: var(--primary-color);
@@ -204,17 +201,24 @@ body {
   color: var(--light-color) !important;
 }
 
+/* Default style for section title underlines */
 .section-title:after {
   content: '';
   position: absolute;
   display: block;
-  width: 50px;
-  height: 3px;
+  width: 500px;
+  height: 4px;
   background: var(--primary-color);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* --- NEW: Custom size for the Projects section underline --- */
+#portfolio .section-title:after {
+  width: 250px; /* Custom smaller width */
+}
+/* --- END OF NEW RULE --- */
 
 .service-card {
   padding: 30px;
@@ -386,10 +390,10 @@ footer .social-links a:hover {
 
 /* --- Definitive Responsive Styles for Mobile & Tablet --- */
 @media (max-width: 768px) {
-  /* 1. HERO SECTION STYLES */
+  /* --- MODIFIED TO SHORTEN HERO SECTION ON MOBILE --- */
   .hero-section {
-    height: 75vh;
-    min-height: 550px;
+    height: 50vh;
+    min-height: 450px; /* Reduced from 550px */
   }
 
   /* 2. HERO CONTENT POSITIONING (CRITICAL FIX) */
@@ -425,4 +429,10 @@ footer .social-links a:hover {
   .section-title h2 {
     font-size: 2rem;
   }
+}
+
+/* Custom alignment for the About Us section underline */
+.about-section .section-title.text-start:after {
+  left: 0;
+  transform: none;
 }
