@@ -241,6 +241,139 @@
             </div>
           </div>
         </div>
+
+        <!-- Add later -->
+        <!-- <div class="text-center mt-4">
+          <button id="viewMoreBtn" class="btn btn-primary">View More</button>
+        </div>
+
+        <div id="extra-photos" class="row mt-4" style="display: none">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra1.jpg" alt="Project 4" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra2.jpg" alt="Project 5" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra3.jpg" alt="Project 6" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra4.jpg" alt="Project 7" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra5.jpg" alt="Project 8" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra6.jpg" alt="Project 9" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra7.jpg" alt="Project 10" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra8.jpg" alt="Project 11" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra9.jpg" alt="Project 12" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra10.jpg" alt="Project 13" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra11.jpg" alt="Project 14" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra12.jpg" alt="Project 15" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra13.jpg" alt="Project 16" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra14.jpg" alt="Project 17" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra15.jpg" alt="Project 18" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra16.jpg" alt="Project 19" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra17.jpg" alt="Project 20" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra18.jpg" alt="Project 21" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra19.jpg" alt="Project 22" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra20.jpg" alt="Project 23" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra21.jpg" alt="Project 24" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra22.jpg" alt="Project 25" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra23.jpg" alt="Project 26" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra24.jpg" alt="Project 27" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="portfolio-item">
+              <img src="img/extra25.jpg" alt="Project 28" />
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
 
@@ -309,5 +442,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document
+        .getElementById('viewMoreBtn')
+        .addEventListener('click', function () {
+          var extraPhotos = document.getElementById('extra-photos');
+          if (extraPhotos.style.display === 'none') {
+            extraPhotos.style.display = 'flex';
+            this.textContent = 'View Less';
+          } else {
+            extraPhotos.style.display = 'none';
+            this.textContent = 'View More';
+          }
+        });
+    </script>
   </body>
 </html>
