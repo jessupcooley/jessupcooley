@@ -1,4 +1,3 @@
-/* Custom styles with dark gray and red colors */
 :root {
   --primary-color: #e62e2e; /* Bright red */
   --dark-color: #222222; /* Dark gray */
@@ -14,7 +13,6 @@ body {
   background-color: var(--light-color);
 }
 
-/* --- Sub-Navbar / Second Bar Styles - UPDATED --- */
 #sub-bar {
   background: var(--secondary-dark);
   padding: 7px 0;
@@ -33,12 +31,10 @@ body {
   align-items: center;
 }
 
-/* --- FIX FOR VERTICAL ALIGNMENT --- */
 #sub-bar a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
-  /* By making the link a flex container, we can perfectly align the icon and text. */
   display: inline-flex;
   align-items: center;
 }
@@ -47,16 +43,31 @@ body {
   color: var(--primary-color);
 }
 
-/* This rule is more streamlined now */
 #sub-bar .contact-info i {
   color: var(--primary-color);
   margin-right: 8px;
-  font-size: inherit; /* This makes the icon match the text size */
-  /* The 'vertical-align' property is no longer necessary */
+  font-size: inherit;
 }
 
 #sub-bar .social-links a {
   margin-left: 18px;
+}
+
+/* Make the Facebook logo bigger and blue in social links */
+.social-links a[aria-label='Facebook'] {
+  background: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.social-links a[aria-label='Facebook'] i {
+  color: #1877f3;
+  font-size: 1rem;
 }
 
 /* Modern Navbar */
@@ -72,7 +83,6 @@ body {
   font-size: 2rem;
   color: white !important;
   letter-spacing: 0.5px;
-  /* MODIFICATION: Removed margin-left: -10px; */
 }
 
 .navbar-brand span {
@@ -86,7 +96,6 @@ body {
   padding: 8px 0;
 }
 
-/* --- MODIFIED FOR 75% CENTERED UNDERLINE --- */
 .nav-link:after {
   content: '';
   position: absolute;
@@ -103,12 +112,10 @@ body {
 .nav-link.active:after {
   width: 75%;
 }
-/* --- END OF MODIFICATION --- */
 
-/* --- MODIFIED TO SHORTEN HERO SECTION --- */
 .hero-section {
   position: relative;
-  height: 65vh; /* Shortened from 80vh */
+  height: 65vh;
   overflow: hidden;
 }
 
@@ -124,20 +131,21 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center top; /* Shift image up to show lower portion */
 }
 
 .hero-font {
   font-size: 2rem;
 }
 
+/* Hero section Faded Bottom Transition */
 .hero-section::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  /* Increased from 150px to make the fade taller and more gradual */
-  height: 280px;
+  height: 120px; /* <--- Adjust this value to control fade height */
   z-index: 5;
   background: linear-gradient(to bottom, transparent, var(--light-color));
 }
@@ -163,7 +171,6 @@ body {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
-/* --- END OF MODIFICATION --- */
 
 .btn-primary {
   background-color: var(--primary-color);
@@ -184,60 +191,114 @@ body {
   background-color: var(--light-color);
 }
 
-.section-title {
-  position: relative;
-  margin-bottom: 60px;
-  text-align: center;
+/* --- FLEXBOX GRID FOR EQUAL SIZED SERVICE CARDS WITH EVEN SPACING --- */
+.services-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.section-title h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--dark-text);
+/* Bootstrap columns override for even spacing and height */
+.services-section .col-md-4 {
+  flex: 1 1 calc(33.333% - 30px);
+  max-width: calc(33.333% - 30px);
+  display: flex;
 }
 
-.light-text-override {
-  color: var(--light-color) !important;
-}
-
-/* Default style for section title underlines */
-.section-title:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 500px;
-  height: 4px;
-  background: var(--primary-color);
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* --- NEW: Custom size for the Projects section underline --- */
-#portfolio .section-title:after {
-  width: 250px; /* Custom smaller width */
-}
-/* --- END OF NEW RULE --- */
-
+/* Service cards */
 .service-card {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px; /* <--- Adjust this value to control card height */
+  height: 100%;
+  width: 100%;
+  padding: 18px;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease;
   background: white;
   border-bottom: 3px solid var(--primary-color);
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
+/* Title stays upper left */
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  align-self: flex-start;
 }
 
+/* Center the description */
+.service-card p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+
+/* Service icon */
 .service-icon {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+/* Example for background image card */
+.service-card.bg-image-rocket {
+  background: url('img/rocket.png') center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.bg-image-trailer {
+  background: url('img/trailer.png') center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.bg-image-lightexcavation {
+  background: url('img/lightexcavation.png') center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.bg-image-barn {
+  background: url('img/barn.png') center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.service-card[class*='bg-image']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.25);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.service-card[class*='bg-image'] > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Portfolio section with background image */
@@ -265,7 +326,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(34, 34, 34, 0.85); /* Dark gray overlay */
+  background: rgba(34, 34, 34, 0.85);
   z-index: -1;
 }
 
@@ -386,30 +447,30 @@ footer .social-links a:hover {
     padding-left: 0;
     margin-top: 40px;
   }
+  .services-section .row {
+    gap: 20px;
+  }
+  .services-section .col-md-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
-/* --- Definitive Responsive Styles for Mobile & Tablet --- */
 @media (max-width: 768px) {
-  /* --- MODIFIED TO SHORTEN HERO SECTION ON MOBILE --- */
   .hero-section {
     height: 50vh;
-    min-height: 450px; /* Reduced from 550px */
+    min-height: 450px;
   }
 
-  /* 2. HERO CONTENT POSITIONING (CRITICAL FIX) */
   .hero-content {
-    /* These properties ensure the text overlays the image */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    /* These properties style the centered text block */
     width: 90%;
     text-align: center;
   }
 
-  /* 3. HERO FONT SIZES */
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -418,7 +479,6 @@ footer .social-links a:hover {
     font-size: 1.1rem;
   }
 
-  /* 4. GENERAL SECTION PADDING & TITLES */
   .services-section,
   .portfolio-section,
   .contact-section,
@@ -429,10 +489,59 @@ footer .social-links a:hover {
   .section-title h2 {
     font-size: 2rem;
   }
+  .services-section .row {
+    gap: 16px;
+  }
+  .services-section .col-md-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Custom alignment for the About Us section underline */
 .about-section .section-title.text-start:after {
   left: 0;
   transform: none;
+}
+
+/* Section title underline */
+.section-title {
+  position: relative;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--dark-text);
+}
+
+.light-text-override {
+  color: var(--light-color) !important;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 500px;
+  height: 4px;
+  background: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#portfolio .section-title:after {
+  width: 250px;
+}
+
+/* GLOBAL paragraph font for readability */
+p {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
 }
