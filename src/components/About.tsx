@@ -13,7 +13,7 @@ function About() {
           </div>
           <div className="col-lg-6">
             <div className="about-content">
-              <div className="section-title text-start">
+              <div className="section-title text-center">
                 <h2>About Us</h2>
               </div>
               <p>

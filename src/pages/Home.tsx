@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Footer from '../components/Footer';
+import Contact from '../components/Contact';
 
 function Home() {
   return (
@@ -16,8 +17,8 @@ function Home() {
       <Services />
       <Portfolio />
       <About />
+      <Contact />
       <Footer />
-      <ContactBar />
     </>
   );
 }
