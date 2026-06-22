@@ -251,7 +251,7 @@ body {
 
 /* Example for background image card */
 .service-card.bg-image-rocket {
-  background: url('img/rocket.png') center/cover no-repeat;
+  background: url('./assets/img/rocket.png') center/cover no-repeat;
   color: white;
   position: relative;
   overflow: hidden;
@@ -260,7 +260,7 @@ body {
 }
 
 .service-card.bg-image-trailer {
-  background: url('img/trailer.png') center/cover no-repeat;
+  background: url('./assets/img/trailer.png') center/cover no-repeat;
   color: white;
   position: relative;
   overflow: hidden;
@@ -269,7 +269,7 @@ body {
 }
 
 .service-card.bg-image-lightexcavation {
-  background: url('img/lightexcavation.png') center/cover no-repeat;
+  background: url('./assets/img/lightexcavation.png') center/cover no-repeat;
   color: white;
   position: relative;
   overflow: hidden;
@@ -278,7 +278,7 @@ body {
 }
 
 .service-card.bg-image-barn {
-  background: url('img/barn.png') center/cover no-repeat;
+  background: url('./assets/img/barn.png') center/cover no-repeat;
   color: white;
   position: relative;
   overflow: hidden;
@@ -436,7 +436,7 @@ footer .social-links a:hover {
 
 @font-face {
   font-family: 'Joshyfont';
-  src: url('assets/fonts/Oxanium-ExtraBold.ttf') format('opentype');
+  src: url('./assets/fonts/Oxanium-ExtraBold.ttf') format('opentype');
 }
 * {
   font-family: 'Joshyfont';
