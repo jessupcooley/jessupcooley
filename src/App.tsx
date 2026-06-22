@@ -8,6 +8,10 @@ function App() {
       path: '/',
       element: <Home />,
     },
+    // {
+    //   path: '/gallery',
+    //   element: <Gallery />,
+    // },
   ]);
 
   return <RouterProvider router={router} />;
