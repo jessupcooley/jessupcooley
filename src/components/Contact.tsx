@@ -10,8 +10,8 @@ function Contact() {
               <div className="section-title text-center">
                 <h2>Contact Us</h2>
               </div>
-              <p className='text-center'>
-                You can reach us by texting or calling (765) 475-4252
+              <p className="text-center">
+                You can reach us by calling or texting (765) 475-4252
               </p>
             </div>
           </div>

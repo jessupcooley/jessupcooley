@@ -27,21 +27,18 @@ function Carousel() {
             />
           </div>
           <div className="carousel-item">
-            <img
-              src={dirtWorkImg}
-              className="d-block w-100"
-              alt="Dirt Work"
-            />
+            <img src={dirtWorkImg} className="d-block w-100" alt="Dirt Work" />
           </div>
         </div>
       </div>
 
       <div className="hero-content">
-        <h2 className="hero-font">Professional and reliable work</h2>
+        {/* Might add this back later */}
+        {/* <h2 className="hero-font">Professional and reliable work</h2>
         <p>
           We are located in Peru, IN, Serving Miami county and surrounding
           communities
-        </p>
+        </p> */}
       </div>
 
       <div className="arc-divider">
