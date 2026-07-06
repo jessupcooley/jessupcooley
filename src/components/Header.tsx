@@ -1,6 +1,16 @@
 import '../App.css';
 
 function Header() {
+  // Helper function to handle smooth scrolling without changing the URL hash
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleScroll = (e: any, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -9,6 +19,10 @@ function Header() {
             style={{ fontFamily: 'Joshyfont' }}
             className="navbar-brand"
             href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           >
             Cooley Land Service
           </a>
@@ -26,22 +40,41 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a
+                  className="nav-link active"
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#services">
+                <a
+                  className="nav-link"
+                  href=""
+                  onClick={(e) => handleScroll(e, 'services')}
+                >
                   Services
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#portfolio">
+                <a
+                  className="nav-link"
+                  href=""
+                  onClick={(e) => handleScroll(e, 'portfolio')}
+                >
                   Projects
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">
+                <a
+                  className="nav-link"
+                  href=""
+                  onClick={(e) => handleScroll(e, 'about')}
+                >
                   About
                 </a>
               </li>
