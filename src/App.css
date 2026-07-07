@@ -1,3 +1,9 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 :root {
   --primary-color: #e62e2e; /* Bright red */
   --dark-color: #222222; /* Dark gray */
@@ -286,7 +292,6 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-
 .service-card[class*='bg-image']::after {
   content: '';
   position: absolute;
@@ -527,6 +532,7 @@ footer .social-links a:hover {
   position: absolute;
   display: block;
   width: 500px;
+  max-width: 80vw;
   height: 4px;
   background: var(--primary-color);
   bottom: -10px;

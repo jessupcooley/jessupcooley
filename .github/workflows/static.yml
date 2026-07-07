@@ -28,8 +28,8 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm' # change to 'yarn' or 'pnpm' if you use those
+          node-version: 24
+          cache: 'npm'
 
       # 2. Install dependencies
       - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # <--- Crucial change! Vite outputs to 'dist'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
