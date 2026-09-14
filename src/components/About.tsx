@@ -1,5 +1,5 @@
 import '../App.css';
-import aboutImage from '../assets/img/IMG_5208.jpg';
+import aboutImage from '../assets/img/new/jessup.jpeg';
 
 function About() {
   return (
@@ -17,29 +17,26 @@ function About() {
                 <h2>About Us</h2>
               </div>
               <p>
-                Cooley Land Service is located in Peru Indiana serving miami
-                county and surrounding areas
-              </p>
-              <p>
-                Our team consists of experienced professionals who understand
-                the importance of getting the job done right the first time.
+                Cooley Land Service was founded by Jessup Cooley in 2025. Jessup
+                grew up with a background in construction and graduated from
+                Purdue University with a B.S. in Mechanical Engineering
+                Technology. He decided to apply his skills toward his own
+                company, with the goal of providing quality and professional
+                services to its customers. We are proud to serve North Central
+                Indiana.
               </p>
               <div className="about-features">
                 <div className="feature">
                   <i className="fas fa-check-circle"></i>
-                  <span>Licensed and insured professionals</span>
+                  <span>Fully insured</span>
                 </div>
                 <div className="feature">
                   <i className="fas fa-check-circle"></i>
-                  <span>Modern, well-maintained equipment</span>
+                  <span>Creative and flexible project planning</span>
                 </div>
                 <div className="feature">
                   <i className="fas fa-check-circle"></i>
-                  <span>Competitive pricing and free estimates</span>
-                </div>
-                <div className="feature">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Commitment to customer satisfaction</span>
+                  <span>Committed to customer satisfaction </span>
                 </div>
               </div>
             </div>

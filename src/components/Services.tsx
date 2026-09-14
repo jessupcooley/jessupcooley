@@ -19,7 +19,6 @@ function Services() {
                 Maintenance, installation, and extension to provide smooth and
                 reliable access to your property.
               </p>
-
             </div>
             <div className="service-item-image">
               <img src={driveway} alt="Driveways" />
@@ -32,7 +31,6 @@ function Services() {
               <p>
                 Building prep, yard leveling, sloping to improve water drainage
               </p>
-
             </div>
             <div className="service-item-image">
               <img src={grading} alt="Land Grading" />
@@ -46,42 +44,9 @@ function Services() {
                 Complete excavation services for foundations, basements, pools,
                 and utility trenches.
               </p>
-
             </div>
             <div className="service-item-image">
               <img src={excavation} alt="Light Excavation" />
-            </div>
-          </article>
-
-          <article className="service-item">
-            <div className="service-item-content">
-              <h3>Fencing</h3>
-              <p>
-                Protect your property with effective erosion control solutions
-                and retaining walls.
-              </p>
-
-            </div>
-            <div className="service-item-image service-item-image--icon">
-              <div className="service-icon">
-                <i className="fas fa-leaf"></i>
-              </div>
-            </div>
-          </article>
-
-          <article className="service-item">
-            <div className="service-item-content">
-              <h3>Soil Remediation</h3>
-              <p>
-                Improve poor soil conditions with our professional soil
-                remediation services.
-              </p>
-  
-            </div>
-            <div className="service-item-image service-item-image--icon">
-              <div className="service-icon">
-                <i className="fas fa-recycle"></i>
-              </div>
             </div>
           </article>
         </div>

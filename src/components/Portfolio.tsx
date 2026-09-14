@@ -1,5 +1,5 @@
 import '../App.css';
-import projectBg from '../assets/img/IMG_5206.jpg';
+import projectBg from '../assets/img/new/main.jpg';
 import project1 from '../assets/img/IMG_5207.jpg';
 import project2 from '../assets/img/IMG_5208.jpg';
 import project3 from '../assets/img/IMG_5209.jpg';
