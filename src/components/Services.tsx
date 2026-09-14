@@ -1,4 +1,7 @@
 import '../App.css';
+import driveway from '../assets/img/new/Driveway.jpg';
+import grading from '../assets/img/new/LandGrading2.jpeg';
+import excavation from '../assets/img/new/Excavation.jpg';
 
 function Services() {
   return (
@@ -6,75 +9,81 @@ function Services() {
       <div className="container">
         <div className="section-title">
           <h2>Our Services</h2>
-          <p>Professional dirt and excavation services for all your needs</p>
         </div>
 
-        <div className="row">
-          <div className="col-md-4">
-            <div className="service-card bg-image-trailer bg-image">
-              <h3>Driveways</h3>
+        <div className="services-list">
+          <article className="service-item">
+            <div className="service-item-content">
+              <h3>Gravel Driveways</h3>
               <p>
-                Professional gravel driveway installation, extension, and
-                maintenance
+                Maintenance, installation, and extension to provide smooth and
+                reliable access to your property.
               </p>
-            </div>
-          </div>
 
-          <div className="col-md-4">
-            <div className="service-card bg-image-rocket bg-image">
-              <h3>Land Grading</h3>
+            </div>
+            <div className="service-item-image">
+              <img src={driveway} alt="Driveways" />
+            </div>
+          </article>
+
+          <article className="service-item">
+            <div className="service-item-content">
+              <h3>Grading</h3>
               <p>
-                Professional land grading to prepare your property for
-                construction or improve drainage.
+                Building prep, yard leveling, sloping to improve water drainage
               </p>
-            </div>
-          </div>
 
-          <div className="col-md-4">
-            <div className="service-card bg-image-lightexcavation bg-image">
-              <h3>Light Excavation</h3>
+            </div>
+            <div className="service-item-image">
+              <img src={grading} alt="Land Grading" />
+            </div>
+          </article>
+
+          <article className="service-item">
+            <div className="service-item-content">
+              <h3>Excavation</h3>
               <p>
                 Complete excavation services for foundations, basements, pools,
                 and utility trenches.
               </p>
-            </div>
-          </div>
 
-          <div className="col-md-4">
-            <div className="service-card bg-image-barn bg-image">
-              <h3>Landscaping</h3>
-              <p>
-                Expert drainage system installation to prevent water damage and
-                flooding
-              </p>
             </div>
-          </div>
+            <div className="service-item-image">
+              <img src={excavation} alt="Light Excavation" />
+            </div>
+          </article>
 
-          <div className="col-md-4">
-            <div className="service-card">
-              <div className="service-icon">
-                <i className="fas fa-leaf"></i>
-              </div>
+          <article className="service-item">
+            <div className="service-item-content">
               <h3>Fencing</h3>
               <p>
                 Protect your property with effective erosion control solutions
                 and retaining walls.
               </p>
-            </div>
-          </div>
 
-          <div className="col-md-4">
-            <div className="service-card">
+            </div>
+            <div className="service-item-image service-item-image--icon">
               <div className="service-icon">
-                <i className="fas fa-recycle"></i>
+                <i className="fas fa-leaf"></i>
               </div>
+            </div>
+          </article>
+
+          <article className="service-item">
+            <div className="service-item-content">
               <h3>Soil Remediation</h3>
               <p>
                 Improve poor soil conditions with our professional soil
                 remediation services.
               </p>
+  
             </div>
-          </div>
+            <div className="service-item-image service-item-image--icon">
+              <div className="service-icon">
+                <i className="fas fa-recycle"></i>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

@@ -191,61 +191,143 @@ body {
   border-color: #d42020;
 }
 
-/* Services section */
+/* Services — one full-width block per service, alternating sides */
 .services-section {
   padding: 100px 0;
-  background-color: var(--light-color);
+  background-color: #ffffff;
 }
 
-/* --- FLEXBOX GRID FOR EQUAL SIZED SERVICE CARDS WITH EVEN SPACING --- */
-.services-section .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+.services-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-/* Bootstrap columns override for even spacing and height */
-.services-section .col-md-4 {
-  flex: 1 1 calc(33.333% - 30px);
-  max-width: calc(33.333% - 30px);
-  display: flex;
-}
-
-/* Service cards */
-.service-card {
+.services-list {
   display: flex;
   flex-direction: column;
-  min-height: 250px; /* <--- Adjust this value to control card height */
-  height: 100%;
   width: 100%;
-  padding: 18px;
-  border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  background: white;
-  border-bottom: 3px solid var(--primary-color);
+  gap: 0;
+  margin: 0;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding: clamp(48px, 6vw, 80px) 0;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+  background: transparent;
+  width: 100%;
+}
+
+/* Odd: text left / image right (matches the reference)
+   Even: image left / text right */
+.service-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-item:first-child {
+  padding-top: 24px;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+  padding-bottom: 24px;
+}
+
+.service-item-image {
+  flex: 0 0 48%;
+  width: 48%;
+  max-width: 48%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  background-color: transparent;
   position: relative;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  margin: 0;
 }
 
-/* Title stays upper left */
-.service-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  text-align: left;
-  align-self: flex-start;
+.service-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-/* Center the description */
-.service-card p {
-  flex: 1;
+.service-item-image--icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  margin: 0;
+  background: var(--light-color);
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.service-item-image--icon .service-icon {
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+}
+
+.service-item-content {
+  flex: 1 1 52%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  text-align: left;
+  min-width: 0;
+}
+
+.service-item-content h3 {
+  margin: 0 0 18px;
+  color: var(--dark-color);
+  font-size: clamp(1.5rem, 2.1vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding-bottom: 0;
+  border-bottom: none;
+  display: block;
+  width: auto;
+}
+
+.service-item-content p {
+  margin: 0 0 28px;
+  max-width: 34em;
+  color: #555555;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.05vw, 1.125rem);
   letter-spacing: 0.01em;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.service-cta {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #cfe8f5;
+  color: var(--dark-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.service-cta:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 
 /* Service icon */
@@ -255,55 +337,32 @@ body {
   margin-bottom: 10px;
 }
 
-/* Example for background image card */
-.service-card.bg-image-rocket {
-  background: url('./assets/img/rocket.png') center/cover no-repeat;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid var(--primary-color);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+@media (min-width: 1200px) {
+  .services-section .container {
+    max-width: 1140px;
+  }
 }
 
-.service-card.bg-image-trailer {
-  background: url('./assets/img/trailer.png') center/cover no-repeat;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid var(--primary-color);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+@media (min-width: 1400px) {
+  .services-section {
+    padding: 120px 0;
+  }
+
+  .services-section .container {
+    max-width: 1320px;
+  }
 }
 
-.service-card.bg-image-lightexcavation {
-  background: url('./assets/img/lightexcavation.png') center/cover no-repeat;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid var(--primary-color);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+@media (min-width: 1600px) {
+  .services-section .container {
+    max-width: 1500px;
+  }
 }
 
-.service-card.bg-image-barn {
-  background: url('./assets/img/barn.png') center/cover no-repeat;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid var(--primary-color);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.service-card[class*='bg-image']::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(34, 34, 34, 0.25);
-  z-index: 1;
-  border-radius: 8px;
-}
-
-.service-card[class*='bg-image'] > * {
-  position: relative;
-  z-index: 2;
+@media (min-width: 1920px) {
+  .services-section .container {
+    max-width: 1680px;
+  }
 }
 
 /* Portfolio section with background image */
@@ -452,12 +511,9 @@ footer .social-links a:hover {
     padding-left: 0;
     margin-top: 40px;
   }
-  .services-section .row {
-    gap: 20px;
-  }
-  .services-section .col-md-4 {
-    flex-basis: 100%;
-    max-width: 100%;
+
+  .service-item {
+    gap: 28px;
   }
 }
 
@@ -494,12 +550,36 @@ footer .social-links a:hover {
   .section-title h2 {
     font-size: 2rem;
   }
-  .services-section .row {
-    gap: 16px;
+
+  .service-item,
+  .service-item:nth-child(even) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 40px 0;
   }
-  .services-section .col-md-4 {
-    flex-basis: 100%;
+
+  .service-item-image {
+    flex: none;
+    order: -1;
+    width: 100%;
     max-width: 100%;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+
+  .service-item-content,
+  .service-item:nth-child(even) .service-item-content {
+    flex: none;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+
+  .service-item-content p {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
